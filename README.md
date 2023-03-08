@@ -1,9 +1,8 @@
 # Notes
-Notes application in Spring
-Database: PostgreSQL
-Template engine: Thymeleaf
-
-
+Notes application in Spring  
+Database: PostgreSQL  
+Template engine: Thymeleaf  
+  
 Реализованный функционал:  
 - [x] Создание одной простейшей заметки только с текстом  
 - [x] Редактирование заметки  
