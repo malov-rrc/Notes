@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update note</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/notes/{id}(id=${note.getId()})}" th:object="${note}">
+    <label for="title">Title: </label>
+    <input type="text" th:field="*{title}" id="title"/>
+    <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</div>
+    <br/>
+    <label for="description">Description: </label>
+    <textarea type="text" th:field="*{description}" id="description"></textarea>
+    <br/>
+    <p th:text="'Created at: ' + ${note.getCreatedAt()}">Created at</p>
+    <br/>
+    <input style="margin-bottom: 5px" type="submit" value="Edit"/>
+    <br/>
+</form>
+<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
